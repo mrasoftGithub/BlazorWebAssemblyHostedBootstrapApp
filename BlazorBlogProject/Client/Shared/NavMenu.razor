@@ -1,0 +1,35 @@
+﻿ <nav class="navbar navbar-expand-sm navbar-light bg-info">
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>  
+    <div class="@NavMenuCssClass navbar-collapse">
+        <ul class="navbar-nav  mr-auto">
+            <li>
+                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">Home</NavLink>
+            </li>
+            <li>
+                <NavLink class="nav-link" href="counter">Teller</NavLink>
+            </li>
+            <li>
+                <NavLink class="nav-link" href="fetchdata">Ophalen data</NavLink>
+            </li>
+            <li>
+                <NavLink class="nav-link" href="voegtoe">Voeg toe</NavLink>
+            </li>
+            <li>
+                <NavLink class="nav-link" href="totaalaantal">Totaal aantal</NavLink>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
